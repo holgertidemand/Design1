@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 import ImagePath from './assets/person.png';
 
@@ -19,19 +20,20 @@ export default class App extends Component {
           source={ImagePath}
           style={styles.image}
         />
-        <Text
-          style={styles.text}
-        >
+        <TouchableOpacity style={styles.quitButton} >
+          <Entypo
+            style={styles.quitIcon}
+            name='cross'
+            size={32}
+          />
+        </TouchableOpacity>
+        <Text style={styles.text} >
           Turn on push notifications
           so you now when you enter
           a new week and get great offers!
         </Text>
-        <TouchableOpacity
-          style={styles.mainButton}
-        >
-          <Text
-            style={styles.mainButtonText}
-          >
+        <TouchableOpacity style={styles.mainButton}>
+          <Text style={styles.mainButtonText}>
             Yay!
           </Text>
         </TouchableOpacity>
@@ -52,6 +54,22 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 21,
     marginHorizontal: 140
+  },
+
+  quitButton: {
+    position: 'absolute',
+    right: 20,
+    top: 20,
+    width: 40,
+    height: 40,
+    backgroundColor: 'rgb(249, 250, 252)',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  quitIcon: {
+    marginTop: 3
   },
 
   text: {
